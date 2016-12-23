@@ -42,9 +42,14 @@ Plug 'majutsushi/tagbar'
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
+Plug 'vim-ruby/vim-ruby'
+
 call plug#end()
 
-colorscheme base16-default-dark
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 let mapleader = ' '
 let g:mapleader = ' '
@@ -257,3 +262,5 @@ let g:UltiSnipsEditSplit="vertical"
 if has('nvim')
   nmap <BS> <C-W>h
 endif
+
+autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
