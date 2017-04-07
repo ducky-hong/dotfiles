@@ -38,11 +38,19 @@ Plug 'terryma/vim-expand-region'
 Plug 'maxbrunsfeld/vim-yankstack'
 
 Plug 'vim-syntastic/syntastic' ", { 'on': 'SyntasticCheck' }
+Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'majutsushi/tagbar'
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'vim-ruby/vim-ruby'
+Plug 'pangloss/vim-javascript'
+
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javascript.jsx'] }
+Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -236,7 +244,6 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-
 " map <leader>o :BufExplorer<cr>
 " map <leader>f :MRU<CR>
 
@@ -249,9 +256,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 "let g:syntastic_c_include_dirs = [ '../include', 'include' ]
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
@@ -263,4 +271,35 @@ if has('nvim')
   nmap <BS> <C-W>h
 endif
 
-autocmd FileType ruby setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal ts=2 sw=2 sts=2 et
+autocmd FileType javascript set ts=2 sw=2 sts=2 et
+autocmd FileType json set ts=2 sw=2 sts=2 et
+
+let g:deoplete#enable_at_startup = 1
+
+" deoplete omnifunctions
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+
+" deoplete showing completions
+set completeopt=longest,menuone,preview
+let g:deoplete#sources = {}
+let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+
+" Tab for everyting
+" https://gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
+autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" tern_for_vim
+let g:tern#command = ['tern']
+let g:tern#arguments = ['--persistent']
+
+" disable tern preview
+let g:SuperTabClosePreviewOnPopupClose = 1
+set completeopt-=preview
+
+au BufNewFile,BufRead *.ejs set filetype=html
