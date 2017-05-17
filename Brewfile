@@ -7,6 +7,7 @@ brew "neovim/neovim/neovim"
 brew "rename"
 brew "tmux"
 brew "zsh"
+brew "ctags"
 
 tap "caskroom/cask"
 cask "appcleaner"
