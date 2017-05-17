@@ -40,6 +40,7 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'vim-syntastic/syntastic' ", { 'on': 'SyntasticCheck' }
 Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'majutsushi/tagbar'
+Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
 
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -51,6 +52,8 @@ Plug 'ternjs/tern_for_vim', { 'do': 'npm install', 'for': ['javascript', 'javasc
 Plug 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'ervandew/supertab'
+
+Plug 'benmills/vimux'
 
 call plug#end()
 
@@ -301,5 +304,11 @@ let g:tern#arguments = ['--persistent']
 " disable tern preview
 let g:SuperTabClosePreviewOnPopupClose = 1
 set completeopt-=preview
+
+" vimux
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+map <Leader>vi :VimuxInspectRunner<CR>
+map <Leader>vz :VimuxZoomRunner<CR>
 
 au BufNewFile,BufRead *.ejs set filetype=html
