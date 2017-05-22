@@ -8,6 +8,7 @@ brew "rename"
 brew "tmux"
 brew "zsh"
 brew "ctags"
+brew "reattach-to-user-namespace"
 
 tap "caskroom/cask"
 cask "appcleaner"
