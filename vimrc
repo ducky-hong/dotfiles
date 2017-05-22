@@ -5,7 +5,9 @@
 let s:darwin = has('mac')
 
 call plug#begin()
-Plug 'tpope/vim-sensible'
+if !has('nvim')
+  Plug 'tpope/vim-sensible'
+endif
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'junegunn/vim-slash'
