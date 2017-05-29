@@ -298,6 +298,7 @@ let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 " https://gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
 autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " tern_for_vim
 let g:tern#command = ['tern']
