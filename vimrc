@@ -302,7 +302,9 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " tern_for_vim
-let g:tern#command = ['tern']
+
+" use default location of tern
+" let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
 " disable tern preview
