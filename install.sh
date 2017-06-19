@@ -14,6 +14,11 @@ if [ ! -d "~/.config/base16-shell" ]; then
         git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 fi
 
+if [ ! -f "~/.vim/autoload/plug.vim" ]; then
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
 ln -sf $(pwd)/vimrc ~/.vimrc
 ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 ln -sf $(pwd)/zshrc ~/.zshrc
