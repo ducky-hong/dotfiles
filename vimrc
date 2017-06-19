@@ -57,6 +57,8 @@ Plug 'ervandew/supertab'
 
 Plug 'benmills/vimux'
 
+Plug 'Shougo/echodoc.vim'
+
 call plug#end()
 
 if filereadable(expand("~/.vimrc_background"))
@@ -284,16 +286,15 @@ autocmd FileType json set ts=2 sw=2 sts=2 et
 let g:deoplete#enable_at_startup = 1
 
 " deoplete omnifunctions
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.javascript = [
-  \ 'tern#Complete',
-  \ 'jspc#omni'
-\]
+" let g:deoplete#omni#functions = {}
+" let g:deoplete#omni#functions.javascript = [
+"   \ 'tern#Complete',
+"   \ 'jspc#omni'
+" \]
 
 " deoplete showing completions
-set completeopt=longest,menuone,preview
-let g:deoplete#sources = {}
-let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
+" let g:deoplete#sources = {}
+" let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 
 " Tab for everyting
 " https://gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
@@ -302,14 +303,14 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " tern_for_vim
-
-" use default location of tern
-" let g:tern#command = ['tern']
+let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
-" disable tern preview
-let g:SuperTabClosePreviewOnPopupClose = 1
-set completeopt-=preview
+set completeopt=longest,menuone,preview
+
+" preview
+set splitbelow
+autocmd CompleteDone * pclose
 
 " vimux
 map <Leader>vp :VimuxPromptCommand<CR>
@@ -320,3 +321,7 @@ map <Leader>vz :VimuxZoomRunner<CR>
 au BufNewFile,BufRead *.ejs set filetype=html
 
 let g:netrw_preview = 1
+
+" echodoc
+let g:echodoc_enable_at_startup=1
+set noshowmode
