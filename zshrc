@@ -16,7 +16,7 @@ if [[ $(uname) == "Darwin" ]]; then
         alias ctags=$(brew --prefix)/bin/ctags
 fi
 
-alias vim="/usr/local/bin/nvim"
+alias vim=$(which nvim)
 alias jest='nocorrect jest '
 
 export PATH=$PATH:"./node_modules/.bin"
