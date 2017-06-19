@@ -316,3 +316,5 @@ map <Leader>vi :VimuxInspectRunner<CR>
 map <Leader>vz :VimuxZoomRunner<CR>
 
 au BufNewFile,BufRead *.ejs set filetype=html
+
+let g:netrw_preview = 1
