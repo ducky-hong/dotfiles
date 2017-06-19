@@ -17,3 +17,6 @@ fi
 ln -sf $(pwd)/vimrc ~/.vimrc
 ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 ln -sf $(pwd)/zshrc ~/.zshrc
+
+# nvim rc
+ln -sf ~/.vimrc $HOME/.config/nvim/init.vim
