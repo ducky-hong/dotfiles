@@ -1,0 +1,8 @@
+alt + shift - j : kwmc window -f prev
+alt + shift - k : kwmc window -f next
+alt + shift - return : kwmc window -s prev
+
+alt + shift - t : kwmc window -t focused
+
+alt + shift - 1 : kwmc display -f 0
+alt + shift - 2 : kwmc display -f 1

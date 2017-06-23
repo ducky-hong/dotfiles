@@ -23,5 +23,9 @@ ln -sf $(pwd)/vimrc ~/.vimrc
 ln -sf $(pwd)/tmux.conf ~/.tmux.conf
 ln -sf $(pwd)/zshrc ~/.zshrc
 
+# kwm
+ln -sf $(pwd)/khdrc ~/.khdrc
+mkdir ~/.kwm && ln -sf $(pwd)/kwmrc ~/.kwm/kwmrc
+
 # nvim rc
 ln -sf ~/.vimrc $HOME/.config/nvim/init.vim
