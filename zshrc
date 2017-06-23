@@ -22,3 +22,4 @@ alias jest='nocorrect jest '
 export PATH=$PATH:"./node_modules/.bin"
 export PATH=$PATH:"$(python3 -m site --user-base)/bin"
 export PATH=$PATH:"$HOME/.yarn/bin"
+export PATH=$PATH:"$HOME/bin"
