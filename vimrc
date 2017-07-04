@@ -39,8 +39,7 @@ Plug 'justinmk/vim-gtfo'
 Plug 'terryma/vim-expand-region'
 Plug 'maxbrunsfeld/vim-yankstack'
 
-Plug 'vim-syntastic/syntastic' ", { 'on': 'SyntasticCheck' }
-Plug 'mtscout6/syntastic-local-eslint.vim'
+Plug 'w0rp/ale'
 Plug 'majutsushi/tagbar'
 Plug 'xolox/vim-easytags' | Plug 'xolox/vim-misc'
 
@@ -94,7 +93,9 @@ if exists('&colorcolumn')
 endif
 
 "set autoindent
-set smartindent
+"set smartindent
+" for indenting python comments
+set cindent
 set wrap
 
 set hidden
@@ -252,19 +253,8 @@ function! <SID>BufcloseCloseIt()
    endif
 endfunction
 
-" map <leader>o :BufExplorer<cr>
-" map <leader>f :MRU<CR>
-
 set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-"let g:syntastic_c_include_dirs = [ '../include', 'include' ]
-let g:syntastic_javascript_checkers = ['eslint']
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -325,3 +315,16 @@ let g:netrw_preview = 1
 " echodoc
 let g:echodoc_enable_at_startup=1
 set noshowmode
+
+let g:easytags_async = 1
+
+" run lint only after saving files
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+" warnings on quickfix
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+
+map <Leader>ek <Plug>(ale_previous_wrap)
+map <Leader>ej <Plug>(ale_next_wrap)
