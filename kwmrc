@@ -10,3 +10,14 @@ kwmc config spawn right
 
 # kwmc config focus-follows-mouse off
 # kwmc config mouse-follows-focus off
+
+kwmc rule owner="Dash" properties={float="true"}
+kwmc rule owner="카카오톡" properties={float="true"}
+kwmc rule owner="KakaoTalk" properties={float="true"}
+
+# Automatically float non-resizable windows
+kwmc config float-non-resizable on
+# Disable focus-follows-mouse when a floating window gains focus
+kwmc config standby-on-float on
+# Center window when made floating
+kwmc config center-on-float off
