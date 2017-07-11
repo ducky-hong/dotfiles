@@ -21,8 +21,8 @@ cask "visual-studio-code"
 cask "xquartz"
 cask "firefox"
 cask "google-chrome"
+cask "1password"
 
-mas "1Password", id: 443987910
 mas "KakaoTalk", id: 869223134
 mas "Movist", id: 461788075
 mas "Slack", id: 803453959
