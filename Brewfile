@@ -6,6 +6,7 @@ brew "zsh"
 brew "ctags"
 brew "reattach-to-user-namespace"
 brew "the_silver_searcher"
+brew "python3"
 
 tap "neovim/neovim"
 brew "neovim"
@@ -26,3 +27,5 @@ cask "1password"
 mas "KakaoTalk", id: 869223134
 mas "Movist", id: 461788075
 mas "Slack", id: 803453959
+
+tap "buo/cask-upgrade"
