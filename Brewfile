@@ -5,12 +5,14 @@ brew "tmux"
 brew "zsh"
 brew "ctags"
 brew "reattach-to-user-namespace"
-brew "kwm"
-brew "kdh"
 brew "the_silver_searcher"
 
 tap "neovim/neovim"
 brew "neovim"
+
+tap "koekeishiya/formulae"
+brew "kwm"
+brew "kdh"
 
 tap "caskroom/cask"
 cask "appcleaner"
