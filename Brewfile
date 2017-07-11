@@ -1,6 +1,5 @@
 brew "fzf"
 brew "git"
-brew "neovim/neovim/neovim"
 brew "rename"
 brew "tmux"
 brew "zsh"
@@ -9,6 +8,9 @@ brew "reattach-to-user-namespace"
 brew "kwm"
 brew "kdh"
 brew "the_silver_searcher"
+
+tap "neovim/neovim"
+brew "neovim"
 
 tap "caskroom/cask"
 cask "appcleaner"
