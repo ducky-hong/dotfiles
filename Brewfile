@@ -12,7 +12,7 @@ brew "neovim"
 
 tap "koekeishiya/formulae"
 brew "kwm"
-brew "kdh"
+brew "khd"
 
 tap "caskroom/cask"
 cask "appcleaner"
