@@ -23,6 +23,7 @@ cask "xquartz"
 cask "firefox"
 cask "google-chrome"
 cask "1password"
+cask "dropbox"
 
 mas "KakaoTalk", id: 869223134
 mas "Movist", id: 461788075
