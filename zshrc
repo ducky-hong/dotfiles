@@ -23,3 +23,6 @@ export PATH=$PATH:"./node_modules/.bin"
 export PATH=$PATH:"$(python3 -m site --user-base)/bin"
 export PATH=$PATH:"$HOME/.yarn/bin"
 export PATH=$PATH:"$HOME/bin"
+
+[ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc ] && source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+[ -f /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc ] && source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
