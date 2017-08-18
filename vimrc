@@ -315,6 +315,7 @@ let g:netrw_preview = 1
 " echodoc
 let g:echodoc_enable_at_startup=1
 set noshowmode
+set cmdheight=2
 
 let g:easytags_async = 1
 
@@ -328,3 +329,7 @@ let g:ale_open_list = 1
 
 map <Leader>ek <Plug>(ale_previous_wrap)
 map <Leader>ej <Plug>(ale_next_wrap)
+
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fix_on_save = 1
