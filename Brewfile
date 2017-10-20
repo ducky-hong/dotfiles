@@ -1,29 +1,32 @@
-brew "fzf"
 brew "git"
 brew "rename"
 brew "tmux"
 brew "zsh"
 brew "ctags"
 brew "reattach-to-user-namespace"
-brew "the_silver_searcher"
+brew "ripgrep"
 brew "python3"
+brew "z"
+brew "mobile-shell"
+brew "gnu-tar"
+brew "gawk"
 
-tap "neovim/neovim"
-brew "neovim"
-
+tap crisidev/homebrew-chunkwm
+brew "chunkwm"
 tap "koekeishiya/formulae"
-brew "kwm"
-brew "khd"
+brew "skhd"
 
 tap "caskroom/cask"
 cask "appcleaner"
-cask "iterm2"
 cask "visual-studio-code"
 cask "xquartz"
 cask "firefox"
 cask "google-chrome"
 cask "1password"
 cask "dropbox"
+cask "font-source-code-pro"
+cask "google-cloud-sdk"
+cask "java"
 
 mas "KakaoTalk", id: 869223134
 mas "Movist", id: 461788075
