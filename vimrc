@@ -21,6 +21,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'docunext/closetag.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'dietsche/vim-lastplace'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 let mapleader = ' '
@@ -39,16 +40,17 @@ set textwidth=0
 set wrapmargin=0
 set hidden
 
+" color
+set background=light
+colorscheme solarized
+
 nmap <leader>w :w!<cr>
 command! W w !sudo tee % > /dev/null
-
 map 0 ^
-
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
 vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
 map <leader>pp :setlocal paste!<cr>
 
 " bufkill
