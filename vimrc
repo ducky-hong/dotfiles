@@ -22,6 +22,7 @@ Plug 'docunext/closetag.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'dietsche/vim-lastplace'
 Plug 'altercation/vim-colors-solarized'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 let mapleader = ' '
