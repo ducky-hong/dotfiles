@@ -59,6 +59,9 @@ map <leader>bd :BD<cr>
 
 " fzf
 map <leader>g :Ag  
+nmap ; :Buffers<cr>
+nmap <leader>t :Files<cr>
+nmap <leader>r :Tags<cr>
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
