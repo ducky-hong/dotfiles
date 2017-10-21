@@ -48,10 +48,6 @@ colorscheme solarized
 nmap <leader>w :w!<cr>
 command! W w !sudo tee % > /dev/null
 map 0 ^
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 map <leader>pp :setlocal paste!<cr>
 
 " bufkill
@@ -130,3 +126,5 @@ let g:ale_sign_warning = '▲'
 let g:ale_sign_error = '✗'
 highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
+nmap <silent> [w <Plug>(ale_previous_wrap)
+nmap <silent> ]w <Plug>(ale_next_wrap)
