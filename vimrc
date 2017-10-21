@@ -23,6 +23,8 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'dietsche/vim-lastplace'
 Plug 'altercation/vim-colors-solarized'
 Plug 'itchyny/lightline.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --js-completer' }
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 call plug#end()
 
 let mapleader = ' '
@@ -54,9 +56,9 @@ map <leader>pp :setlocal paste!<cr>
 map <leader>bd :BD<cr>
 
 " fzf
-map <leader>g :Ag  
+map <leader>g :Ag 
 nmap ; :Buffers<cr>
-nmap <leader>t :Files<cr>
+nmap <leader>f :Files<cr>
 nmap <leader>r :Tags<cr>
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
@@ -128,3 +130,10 @@ highlight link ALEWarningSign String
 highlight link ALEErrorSign Title
 nmap <silent> [w <Plug>(ale_previous_wrap)
 nmap <silent> ]w <Plug>(ale_next_wrap)
+
+" ycm
+let g:ycm_python_binary_path = 'python3'
+nnoremap <leader>t :YcmCompleter GoTo<CR>
+nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
+nnoremap <leader>jc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
