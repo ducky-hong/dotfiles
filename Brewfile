@@ -10,6 +10,7 @@ brew "z"
 brew "mobile-shell"
 brew "gnu-tar"
 brew "gawk"
+brew "shellcheck"
 
 tap crisidev/homebrew-chunkwm
 brew "chunkwm"
