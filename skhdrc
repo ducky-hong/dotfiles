@@ -17,8 +17,8 @@ alt - j : chunkc tiling::window --focus south
 alt - k : chunkc tiling::window --focus north
 alt - l : chunkc tiling::window --focus east
 
-alt - p : chunkc tiling::window --focus prev
-alt - n : chunkc tiling::window --focus next
+# alt - p : chunkc tiling::window --focus prev
+# alt - n : chunkc tiling::window --focus next
 
 # move focused window
 shift + alt - h : chunkc tiling::window --warp west
