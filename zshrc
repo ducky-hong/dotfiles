@@ -10,6 +10,7 @@ source_if_exists "$HOME/.fzf.zsh"
 source_if_exists '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source_if_exists '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 source_if_exists '/usr/local/opt/chruby/share/chruby/chruby.sh'
+source_if_exists '/usr/local/opt/chruby/share/chruby/auto.sh'
 [[ -n $(command -v chruby) ]] && chruby 2.5.1
 
 export EDITOR="vim"
@@ -22,6 +23,7 @@ export PATH=$PATH:"./node_modules/.bin"
 export PATH=$PATH:"$(python3 -m site --user-base)/bin"
 export PATH=$PATH:"$HOME/.yarn/bin"
 export PATH=$PATH:"$HOME/bin"
+export PATH=$PATH:"$HOME/miniconda3/bin"
 export PATH="/usr/local/opt/python/libexec/bin":$PATH
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
